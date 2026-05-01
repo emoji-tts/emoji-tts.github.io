@@ -119,6 +119,7 @@ main {
 .link-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   border-radius: 999px;
   padding: 12px 24px;
@@ -127,6 +128,8 @@ main {
   border: 1px solid var(--line);
   transition: all 0.2s ease;
   font-size: 0.95rem;
+  min-height: 48px;
+  white-space: nowrap;
 }
 
 .link-btn.hf {
@@ -142,7 +145,28 @@ main {
   border-color: #d4bf5c;
 }
 
+.link-btn.dataset {
+  color: #064e3b;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-color: #7dd3a8;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.18);
+}
+
+.link-btn.dataset:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28);
+  border-color: #34d399;
+}
+
 .icon { font-size: 1rem; line-height: 1; }
+
+.icon-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
 
 .stats {
   margin: 0 0 20px;
@@ -417,6 +441,17 @@ main {
 }
 
 @media (max-width: 640px) {
+  .link-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .link-btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
   .sample-table tr.group-row {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
